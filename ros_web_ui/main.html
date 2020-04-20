@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="widgets.css">
+	<title>机器人学</title>
+</head>
+
+<body>
+  <a href="https://github.com/sun-coke/Exp-Guide" 
+    style="color: white; font-size: 17px; position: fixed; top: 13px; right: 15px">实验指导书参考链接</a>
+	<div id="container">
+		<div id="header1" class="header">
+			<!--
+      <a href="#" class="jsRosweb">ROSWeb</a>
+
+      <div class="cssConnection">
+        <p>Connection</p>
+        <p class="cssRosUrlPrefix">
+          ws://<input type="text" class="cssRosUrl jsRosUrl" value="localhost:9090" />
+        </p>
+        <a href="#" class="jsRosConnect cssRosConnect">&nbsp;</a>
+      </div>
+
+      <a href="#" style="display:none;" class="jsToggleMovable cssToggleMovable">&nbsp;</a>
+      <div class="cssWorkspace">
+        <p>Current Workspace</p>
+        <input type="text" id="jsWorkspaceName" class="" value="blank workspace" />
+        <a href="#" class="jsOpenWorkspace cssOpenWorkspace">&nbsp;</a>
+        <a href="#" class="jsSaveWorkspace cssSaveWorkspace">&nbsp;</a>
+      </div>
+      -->
+		</div>
+		<div id="header2" class="header">
+			<p>机器人学</p>
+			<a href="#" class="flat-btn jsRosConnect cssRosConnect active">&nbsp;</a>
+			<a href="#" class="flat-btn jsOpenWorkspace cssOpenWorkspace">&nbsp;</a>
+			<a href="#" class="flat-btn jsToggleMovable cssToggleMovable active">&nbsp;</a>
+
+			<a href="#" class="jsConfiguration cssHeader2Link">连接</a>
+			<a href="#" class="jsEventWidgetsMenu cssHeader2Link">组件</a>
+			<a href="#" class="jsEventNewTab cssHeader2Link">视图</a>
+			<div class="cssTab jsTab jsActive" data-tab-id="1">
+  <a href="#" class="cssEventTab jsEventTab jsActive" data-tab-id="1">视图 #1</a>
+  <a href="#" class="cssEventCloseTab jsEventCloseTab" data-tab-id="1"></a>
+</div><div class="clearfix"></div>
+		</div>
+
+		<div id="content" style="height: 590px;">
+			<div class="balloon cssConfigurationContainer jsConfigurationContainer" style="display: none;">
+				<h2>连接</h2>
+
+				<div>
+					<label>端口号</label>
+					<input id="jsRosUrl" class="" type="text" name="connection" value="ws://localhost:9090">
+				</div>
+
+				<div>
+					<label>工作空间</label>
+					<input id="jsWorkspaceName" type="text" name="workspace" value="new workspace">
+					<a href="#" class="flat-btn jsSaveWorkspace cssSaveWorkspace">&nbsp;</a>
+				</div>
+			</div>
+			<div class="balloon cssWidgetsContainer jsWidgetsContainer" style="display: block;">
+				<div class="cssWidgets jsWidgets">
+					<h2>组件</h2>
+					<div class="cssWidgetGroups jsWidgetGroups">
+					<div id="jsWidgetGroup1" class="jsWidgetGroup cssWidgetGroup">
+   <h3>ROS命令遥控</h3>
+   <div class="jsWidgets cssWidgets"><a href="#" class="cssWidgetItem jsEventWidgetItem" data-widget-id="1">#1 - Topic Subscriber</a><a href="#" class="cssWidgetItem jsEventWidgetItem" data-widget-id="2">#2 - Topic Publisher</a><a href="#" class="cssWidgetItem jsEventWidgetItem" data-widget-id="3">#3 - Param Viewer</a><a href="#" class="cssWidgetItem jsEventWidgetItem" data-widget-id="4">#4 - Service Viewer</a></div>
+ </div><div id="jsWidgetGroup2" class="jsWidgetGroup cssWidgetGroup">
+   <h3>传感器监控</h3>
+   <div class="jsWidgets cssWidgets"><a href="#" class="cssWidgetItem jsEventWidgetItem" data-widget-id="7">#5 - Camera Viewer</a><a href="#" class="cssWidgetItem jsEventWidgetItem" data-widget-id="8">#6 - LaserScan Viewer</a><a href="#" class="cssWidgetItem jsEventWidgetItem" data-widget-id="9">#7 - IMU Viewer</a></div>
+ </div><div id="jsWidgetGroup3" class="jsWidgetGroup cssWidgetGroup">
+   <h3>3D图像监控</h3>
+   <div class="jsWidgets cssWidgets"><a href="#" class="cssWidgetItem jsEventWidgetItem" data-widget-id="10">#8 - ROS 3D Viewer</a></div>
+ </div><div id="jsWidgetGroup4" class="jsWidgetGroup cssWidgetGroup">
+   <h3>日志监控</h3>
+   <div class="jsWidgets cssWidgets"><a href="#" class="cssWidgetItem jsEventWidgetItem" data-widget-id="11">#9 - Diagnostics Viewer</a><a href="#" class="cssWidgetItem jsEventWidgetItem" data-widget-id="12">#10 - Log Viewer</a></div>
+ </div><div id="jsWidgetGroup5" class="jsWidgetGroup cssWidgetGroup">
+   <h3>拓展</h3>
+   <div class="jsWidgets cssWidgets"><a href="#" class="cssWidgetItem jsEventWidgetItem" data-widget-id="13">#11 - New Widget</a></div>
+ </div></div>
+				</div>
+			</div>
+			<div class="cssMenuWidgetsSettings jsMenuWidgetsSettings" style="height: 590px; top: 50px; right: 0px;">
+				<div class="cssSettings">
+					<h2>组件设置</h2>
+					<input type="hidden" id="widgetSettings" data-widget-instance-id="" value="13">
+					<div class="cssSettingsSelection jsSettingsSelection"><label>Topic name</label>
+<br>
+<input type="text" class="jsWidgetParam cssWidgetParam" name="doesnotmatter" data-widget-instance-id="13" data-widget-param-id="1" data-widget-param-var="topicName" value="/cmd_vel">
+<label>Topic type</label>
+<br>
+<input type="text" class="jsWidgetParam cssWidgetParam" name="doesnotmatter" data-widget-instance-id="13" data-widget-param-id="2" data-widget-param-var="topicType" value="geometry_msgs/Twist">
+</div>
+					<div class="cssSettingsBtn">
+						<a href="#" class="btn btn-blue jsWidgetSettingsRefresh cssWidgetSettingsRefresh">刷新</a>
+						<a href="#" class="btn btn-grey jsWidgetSettingsCancel cssWidgetSettingsCancel">取消</a>
+						<a href="#" class="btn btn-green jsWidgetSettingsConfirm cssWidgetSettingsConfirm">确认</a>
+						<br><br>
+						<a href="#" class="btn btn-red jsWidgetSettingsRemove cssWidgetSettingsRemove">删除</a>
+					</div>
+				</div>
+			</div>
+			<div id="tabs"><div class="jsTabContent cssTabContent jsShow" data-tab-id="1">
+  
+
+<div class="jsWidgetContainer cssWidgetContainer" data-widget-instance-id="2" data-widget-conf="1" style="left: 313px; top: 54px; width: 362px; height: 272px; z-index: 20;">
+  <!--
+  <link rel="stylesheet" type="text/css" href="widgets//main.css" />
+  <script type="text/javascript" src="widgets//main.js"></script>
+  -->
+
+  <div class="jsWidgetConfiguration cssWidgetConfiguration" data-widget-instance-id="2">
+    <a href="#" class="jsWidgetSettings cssWidgetSettings" data-widget-instance-id="2"></a>
+    <!--
+    <a href="#" class="jsWidgetDelete cssWidgetDelete shadow"></a>
+    <a href="#" class="jsWidgetConfirm cssWidgetConfirm shadow"></a>
+    -->
+    <span href="#" class="jsWidgetResize cssWidgetResize"></span>
+  </div>
+
+  <div class="jsWidgetContent cssWidgetContent">
+    <div class="jsWidgetMask cssWidgetMask"></div>
+    <div class="ros-widget" data-widget-name="camera-viewer" data-min-width="360" data-min-height="270" data-max-width="800" data-max-height="600" data-height="360" data-width="480">
+
+  <!--  META Tags to describe topics subscription -->
+  <meta data-ros-topic="1" data-ros-topic-id="1" data-ros-topic-desc="Topic to subscribe" data-ros-topic-type="sensor_msgs/Image|sensor_msgs/CompressedImage" data-ros-topic-chng="onchange" data-ros-topic-slctd="/camera/image_raw">
+	<meta data-wdgt-param="1" data-widget-param-id="1" data-widget-param-desc="Web Video Server Port" data-widget-param-var="webVideoServerPort" data-widget-param-value="8080">
+	<meta data-wdgt-param="1" data-widget-param-id="2" data-widget-param-desc="Web Video Compression Type" data-widget-param-var="webVideoCompressionType" data-widget-param-value="mjpeg">
+
+  <!-- The content which could be manipulated by widget class -->
+  <div class="jsMjpeg"><canvas width="360" height="270" style="background: rgb(170, 170, 170);"></canvas></div>
+</div>
+
+  </div>
+</div>
+
+
+
+
+<div class="jsWidgetContainer cssWidgetContainer" data-widget-instance-id="7" data-widget-conf="1" style="left: 692px; top: 50px; width: 302px; height: 302px; z-index: 20;">
+  <!--
+  <link rel="stylesheet" type="text/css" href="widgets//main.css" />
+  <script type="text/javascript" src="widgets//main.js"></script>
+  -->
+
+  <div class="jsWidgetConfiguration cssWidgetConfiguration" data-widget-instance-id="7">
+    <a href="#" class="jsWidgetSettings cssWidgetSettings" data-widget-instance-id="7"></a>
+    <!--
+    <a href="#" class="jsWidgetDelete cssWidgetDelete shadow"></a>
+    <a href="#" class="jsWidgetConfirm cssWidgetConfirm shadow"></a>
+    -->
+    <span href="#" class="jsWidgetResize cssWidgetResize"></span>
+  </div>
+
+  <div class="jsWidgetContent cssWidgetContent">
+    <div class="jsWidgetMask cssWidgetMask"></div>
+    <div class="ros-widget" data-widget-name="laser-scan-viewer" data-min-height="300" data-min-width="300" data-max-height="300" data-max-width="300" data-height="300" data-width="300">
+
+  <!--  META Tags to describe topics subscription -->
+  <meta data-ros-topic="1" data-ros-topic-id="1" data-ros-topic-desc="Topic to subscribe" data-ros-topic-type="sensor_msgs/LaserScan" data-ros-topic-chng="onchange" data-ros-topic-slctd="/scan">
+  <meta data-wdgt-param="1" data-widget-param-id="1" data-widget-param-desc="Maximum range" data-widget-param-var="maxRange" data-widget-param-value="30">
+  <meta data-wdgt-param="1" data-widget-param-id="2" data-widget-param-desc="Max Update Rate" data-widget-param-var="maxUpdateRate" data-widget-param-value="1">
+
+  <!-- The content which could be manipulated by widget class -->
+  <div class="datatopic1">
+    <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+    <circle cx="150" cy="150" r="1" fill="red"></circle><circle cx="150" cy="150" r="150" stroke="red" stroke-width="1" fill="transparent"></circle><g class="points"></g><circle cx="150" cy="144.24798667430878" r="1" fill="black" transform="rotate(171.88733853924697, 150, 150)"></circle><circle cx="150" cy="144.25045311450958" r="1" fill="black" transform="rotate(170.92974889909723, 150, 150)"></circle><circle cx="150" cy="144.24449384212494" r="1" fill="black" transform="rotate(169.9721592589475, 150, 150)"></circle><circle cx="150" cy="144.17679905891418" r="1" fill="black" transform="rotate(169.01456961879776, 150, 150)"></circle><circle cx="150" cy="144.22519207000732" r="1" fill="black" transform="rotate(168.05697997864803, 150, 150)"></circle><circle cx="150" cy="144.17844593524933" r="1" fill="black" transform="rotate(167.09939033849832, 150, 150)"></circle><circle cx="150" cy="144.16944921016693" r="1" fill="black" transform="rotate(166.1418006983486, 150, 150)"></circle><circle cx="150" cy="144.13160800933838" r="1" fill="black" transform="rotate(165.18421105819885, 150, 150)"></circle><circle cx="150" cy="144.03211414813995" r="1" fill="black" transform="rotate(164.22662141804912, 150, 150)"></circle><circle cx="150" cy="144.03323471546173" r="1" fill="black" transform="rotate(163.2690317778994, 150, 150)"></circle><circle cx="150" cy="144.12944853305817" r="1" fill="black" transform="rotate(162.31144213774965, 150, 150)"></circle><circle cx="150" cy="144.06894743442535" r="1" fill="black" transform="rotate(161.35385249759992, 150, 150)"></circle><circle cx="150" cy="144.05911028385162" r="1" fill="black" transform="rotate(160.39626285745018, 150, 150)"></circle><circle cx="150" cy="143.9974409341812" r="1" fill="black" transform="rotate(159.43867321730045, 150, 150)"></circle><circle cx="150" cy="143.9333736896515" r="1" fill="black" transform="rotate(158.4810835771507, 150, 150)"></circle><circle cx="150" cy="143.9836072921753" r="1" fill="black" transform="rotate(157.523493937001, 150, 150)"></circle><circle cx="150" cy="143.81021857261658" r="1" fill="black" transform="rotate(156.56590429685127, 150, 150)"></circle><circle cx="150" cy="143.7611585855484" r="1" fill="black" transform="rotate(155.60831465670154, 150, 150)"></circle><circle cx="150" cy="143.7727189064026" r="1" fill="black" transform="rotate(154.6507250165518, 150, 150)"></circle><circle cx="150" cy="143.72854351997375" r="1" fill="black" transform="rotate(153.69313537640207, 150, 150)"></circle><circle cx="150" cy="143.664311170578" r="1" fill="black" transform="rotate(152.73554573625233, 150, 150)"></circle><circle cx="150" cy="143.65091562271118" r="1" fill="black" transform="rotate(151.7779560961026, 150, 150)"></circle><circle cx="150" cy="143.4999930858612" r="1" fill="black" transform="rotate(150.82036645595286, 150, 150)"></circle><circle cx="150" cy="143.4808498620987" r="1" fill="black" transform="rotate(149.86277681580313, 150, 150)"></circle><circle cx="150" cy="143.4030830860138" r="1" fill="black" transform="rotate(148.90518717565342, 150, 150)"></circle><circle cx="150" cy="143.4525215625763" r="1" fill="black" transform="rotate(147.9475975355037, 150, 150)"></circle><circle cx="150" cy="143.27145516872406" r="1" fill="black" transform="rotate(146.99000789535395, 150, 150)"></circle><circle cx="150" cy="143.30162286758423" r="1" fill="black" transform="rotate(146.03241825520422, 150, 150)"></circle><circle cx="150" cy="143.19827437400818" r="1" fill="black" transform="rotate(145.07482861505449, 150, 150)"></circle><circle cx="150" cy="143.08239102363586" r="1" fill="black" transform="rotate(144.11723897490475, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(143.15964933475502, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(142.20205969460528, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(141.24447005445555, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(140.2868804143058, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(139.3292907741561, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(138.37170113400637, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(137.41411149385664, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(136.4565218537069, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(135.49893221355717, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(134.54134257340743, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(133.5837529332577, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(132.62616329310796, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(131.66857365295823, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(130.71098401280852, 150, 150)"></circle><circle cx="150" cy="141.64473354816437" r="1" fill="black" transform="rotate(129.7533943726588, 150, 150)"></circle><circle cx="150" cy="141.6869068145752" r="1" fill="black" transform="rotate(128.79580473250905, 150, 150)"></circle><circle cx="150" cy="141.8089908361435" r="1" fill="black" transform="rotate(127.83821509235932, 150, 150)"></circle><circle cx="150" cy="141.95092856884003" r="1" fill="black" transform="rotate(126.88062545220959, 150, 150)"></circle><circle cx="150" cy="142.0309615135193" r="1" fill="black" transform="rotate(125.92303581205985, 150, 150)"></circle><circle cx="150" cy="146.37740641832352" r="1" fill="black" transform="rotate(124.96544617191012, 150, 150)"></circle><circle cx="150" cy="146.43851310014725" r="1" fill="black" transform="rotate(124.0078565317604, 150, 150)"></circle><circle cx="150" cy="146.25791937112808" r="1" fill="black" transform="rotate(123.05026689161066, 150, 150)"></circle><circle cx="150" cy="146.19747459888458" r="1" fill="black" transform="rotate(122.09267725146093, 150, 150)"></circle><circle cx="150" cy="146.0343173146248" r="1" fill="black" transform="rotate(121.13508761131119, 150, 150)"></circle><circle cx="150" cy="146.03521704673767" r="1" fill="black" transform="rotate(120.17749797116146, 150, 150)"></circle><circle cx="150" cy="145.92397451400757" r="1" fill="black" transform="rotate(119.21990833101174, 150, 150)"></circle><circle cx="150" cy="145.75669676065445" r="1" fill="black" transform="rotate(118.262318690862, 150, 150)"></circle><circle cx="150" cy="145.6736433506012" r="1" fill="black" transform="rotate(117.30472905071227, 150, 150)"></circle><circle cx="150" cy="145.4351195693016" r="1" fill="black" transform="rotate(116.34713941056253, 150, 150)"></circle><circle cx="150" cy="145.41309922933578" r="1" fill="black" transform="rotate(115.3895497704128, 150, 150)"></circle><circle cx="150" cy="145.2410528063774" r="1" fill="black" transform="rotate(114.43196013026308, 150, 150)"></circle><circle cx="150" cy="145.0954645872116" r="1" fill="black" transform="rotate(113.47437049011334, 150, 150)"></circle><circle cx="150" cy="144.82797861099243" r="1" fill="black" transform="rotate(112.51678084996361, 150, 150)"></circle><circle cx="150" cy="144.677654504776" r="1" fill="black" transform="rotate(111.55919120981387, 150, 150)"></circle><circle cx="150" cy="144.44396317005157" r="1" fill="black" transform="rotate(110.60160156966415, 150, 150)"></circle><circle cx="150" cy="144.30235028266907" r="1" fill="black" transform="rotate(109.64401192951442, 150, 150)"></circle><circle cx="150" cy="143.9050853252411" r="1" fill="black" transform="rotate(108.68642228936469, 150, 150)"></circle><circle cx="150" cy="143.66459012031555" r="1" fill="black" transform="rotate(107.72883264921495, 150, 150)"></circle><circle cx="150" cy="143.32460463047028" r="1" fill="black" transform="rotate(106.77124300906522, 150, 150)"></circle><circle cx="150" cy="143.38876247406006" r="1" fill="black" transform="rotate(105.8136533689155, 150, 150)"></circle><circle cx="150" cy="143.3678835630417" r="1" fill="black" transform="rotate(104.85606372876576, 150, 150)"></circle><circle cx="150" cy="143.44025254249573" r="1" fill="black" transform="rotate(103.89847408861603, 150, 150)"></circle><circle cx="150" cy="143.47017467021942" r="1" fill="black" transform="rotate(102.94088444846629, 150, 150)"></circle><circle cx="150" cy="143.5225009918213" r="1" fill="black" transform="rotate(101.98329480831656, 150, 150)"></circle><circle cx="150" cy="143.53440821170807" r="1" fill="black" transform="rotate(101.02570516816684, 150, 150)"></circle><circle cx="150" cy="143.60808193683624" r="1" fill="black" transform="rotate(100.0681155280171, 150, 150)"></circle><circle cx="150" cy="143.58270287513733" r="1" fill="black" transform="rotate(99.11052588786737, 150, 150)"></circle><circle cx="150" cy="143.646502494812" r="1" fill="black" transform="rotate(98.15293624771763, 150, 150)"></circle><circle cx="150" cy="143.63709926605225" r="1" fill="black" transform="rotate(97.1953466075679, 150, 150)"></circle><circle cx="150" cy="143.65711569786072" r="1" fill="black" transform="rotate(96.23775696741818, 150, 150)"></circle><circle cx="150" cy="143.67971241474152" r="1" fill="black" transform="rotate(95.28016732726844, 150, 150)"></circle><circle cx="150" cy="143.57137501239777" r="1" fill="black" transform="rotate(94.32257768711871, 150, 150)"></circle><circle cx="150" cy="143.61934065818787" r="1" fill="black" transform="rotate(93.36498804696897, 150, 150)"></circle><circle cx="150" cy="143.669091463089" r="1" fill="black" transform="rotate(92.40739840681924, 150, 150)"></circle><circle cx="150" cy="143.67579102516174" r="1" fill="black" transform="rotate(91.44980876666952, 150, 150)"></circle><circle cx="150" cy="143.67639303207397" r="1" fill="black" transform="rotate(90.49221912651979, 150, 150)"></circle><circle cx="150" cy="143.6811727285385" r="1" fill="black" transform="rotate(89.53462948637005, 150, 150)"></circle><circle cx="150" cy="143.72007012367249" r="1" fill="black" transform="rotate(88.57703984622032, 150, 150)"></circle><circle cx="150" cy="143.68054687976837" r="1" fill="black" transform="rotate(87.6194502060706, 150, 150)"></circle><circle cx="150" cy="143.6958009004593" r="1" fill="black" transform="rotate(86.66186056592086, 150, 150)"></circle><circle cx="150" cy="143.66667926311493" r="1" fill="black" transform="rotate(85.70427092577113, 150, 150)"></circle><circle cx="150" cy="143.64032447338104" r="1" fill="black" transform="rotate(84.74668128562139, 150, 150)"></circle><circle cx="150" cy="143.70850265026093" r="1" fill="black" transform="rotate(83.78909164547166, 150, 150)"></circle><circle cx="150" cy="143.67770671844482" r="1" fill="black" transform="rotate(82.83150200532194, 150, 150)"></circle><circle cx="150" cy="143.63248109817505" r="1" fill="black" transform="rotate(81.8739123651722, 150, 150)"></circle><circle cx="150" cy="143.67949724197388" r="1" fill="black" transform="rotate(80.91632272502247, 150, 150)"></circle><circle cx="150" cy="143.6164379119873" r="1" fill="black" transform="rotate(79.95873308487273, 150, 150)"></circle><circle cx="150" cy="143.6498612165451" r="1" fill="black" transform="rotate(79.001143444723, 150, 150)"></circle><circle cx="150" cy="143.5657548904419" r="1" fill="black" transform="rotate(78.04355380457328, 150, 150)"></circle><circle cx="150" cy="143.55018258094788" r="1" fill="black" transform="rotate(77.08596416442354, 150, 150)"></circle><circle cx="150" cy="143.6274003982544" r="1" fill="black" transform="rotate(76.12837452427381, 150, 150)"></circle><circle cx="150" cy="143.49556028842926" r="1" fill="black" transform="rotate(75.17078488412407, 150, 150)"></circle><circle cx="150" cy="143.39399456977844" r="1" fill="black" transform="rotate(74.21319524397434, 150, 150)"></circle><circle cx="150" cy="143.53687465190887" r="1" fill="black" transform="rotate(73.25560560382462, 150, 150)"></circle><circle cx="150" cy="143.41907858848572" r="1" fill="black" transform="rotate(72.29801596367489, 150, 150)"></circle><circle cx="150" cy="143.40121388435364" r="1" fill="black" transform="rotate(71.34042632352515, 150, 150)"></circle><circle cx="150" cy="143.31569492816925" r="1" fill="black" transform="rotate(70.38283668337542, 150, 150)"></circle><circle cx="150" cy="143.38977873325348" r="1" fill="black" transform="rotate(69.4252470432257, 150, 150)"></circle><circle cx="150" cy="143.31176340579987" r="1" fill="black" transform="rotate(68.46765740307596, 150, 150)"></circle><circle cx="150" cy="143.17355513572693" r="1" fill="black" transform="rotate(67.51006776292623, 150, 150)"></circle><circle cx="150" cy="143.18568348884583" r="1" fill="black" transform="rotate(66.55247812277649, 150, 150)"></circle><circle cx="150" cy="143.23463141918182" r="1" fill="black" transform="rotate(65.59488848262676, 150, 150)"></circle><circle cx="150" cy="143.17968130111694" r="1" fill="black" transform="rotate(64.63729884247704, 150, 150)"></circle><circle cx="150" cy="143.15285623073578" r="1" fill="black" transform="rotate(63.6797092023273, 150, 150)"></circle><circle cx="150" cy="142.99039959907532" r="1" fill="black" transform="rotate(62.72211956217757, 150, 150)"></circle><circle cx="150" cy="142.92979180812836" r="1" fill="black" transform="rotate(61.76452992202783, 150, 150)"></circle><circle cx="150" cy="142.83237755298615" r="1" fill="black" transform="rotate(60.806940281878106, 150, 150)"></circle><circle cx="150" cy="142.77668356895447" r="1" fill="black" transform="rotate(59.84935064172837, 150, 150)"></circle><circle cx="150" cy="142.82923340797424" r="1" fill="black" transform="rotate(58.891761001578644, 150, 150)"></circle><circle cx="150" cy="142.7032619714737" r="1" fill="black" transform="rotate(57.93417136142891, 150, 150)"></circle><circle cx="150" cy="142.5937420129776" r="1" fill="black" transform="rotate(56.97658172127918, 150, 150)"></circle><circle cx="150" cy="142.51879572868347" r="1" fill="black" transform="rotate(56.01899208112945, 150, 150)"></circle><circle cx="150" cy="142.49265909194946" r="1" fill="black" transform="rotate(55.06140244097971, 150, 150)"></circle><circle cx="150" cy="142.46715307235718" r="1" fill="black" transform="rotate(54.103812800829985, 150, 150)"></circle><circle cx="150" cy="142.34960854053497" r="1" fill="black" transform="rotate(53.14622316068025, 150, 150)"></circle><circle cx="150" cy="142.25019872188568" r="1" fill="black" transform="rotate(52.18863352053052, 150, 150)"></circle><circle cx="150" cy="142.0693004131317" r="1" fill="black" transform="rotate(51.23104388038079, 150, 150)"></circle><circle cx="150" cy="141.9917231798172" r="1" fill="black" transform="rotate(50.273454240231054, 150, 150)"></circle><circle cx="150" cy="141.82041466236115" r="1" fill="black" transform="rotate(49.315864600081326, 150, 150)"></circle><circle cx="150" cy="141.74301862716675" r="1" fill="black" transform="rotate(48.35827495993159, 150, 150)"></circle><circle cx="150" cy="141.65508925914764" r="1" fill="black" transform="rotate(47.400685319781864, 150, 150)"></circle><circle cx="150" cy="141.62018597126007" r="1" fill="black" transform="rotate(46.44309567963213, 150, 150)"></circle><circle cx="150" cy="141.3971108198166" r="1" fill="black" transform="rotate(45.4855060394824, 150, 150)"></circle><circle cx="150" cy="141.29065990447998" r="1" fill="black" transform="rotate(44.52791639933267, 150, 150)"></circle><circle cx="150" cy="141.21110022068024" r="1" fill="black" transform="rotate(43.57032675918293, 150, 150)"></circle><circle cx="150" cy="140.9485912322998" r="1" fill="black" transform="rotate(42.612737119033206, 150, 150)"></circle><circle cx="150" cy="140.85779130458832" r="1" fill="black" transform="rotate(41.65514747888347, 150, 150)"></circle><circle cx="150" cy="140.57676672935486" r="1" fill="black" transform="rotate(40.69755783873374, 150, 150)"></circle><circle cx="150" cy="140.44772028923035" r="1" fill="black" transform="rotate(39.73996819858401, 150, 150)"></circle><circle cx="150" cy="140.3151398897171" r="1" fill="black" transform="rotate(38.78237855843428, 150, 150)"></circle><circle cx="150" cy="140.05561292171478" r="1" fill="black" transform="rotate(37.82478891828455, 150, 150)"></circle><circle cx="150" cy="139.94466423988342" r="1" fill="black" transform="rotate(36.86719927813481, 150, 150)"></circle><circle cx="150" cy="139.67475414276123" r="1" fill="black" transform="rotate(35.909609637985085, 150, 150)"></circle><circle cx="150" cy="139.40232038497925" r="1" fill="black" transform="rotate(34.95201999783535, 150, 150)"></circle><circle cx="150" cy="139.29868459701538" r="1" fill="black" transform="rotate(33.99443035768562, 150, 150)"></circle><circle cx="150" cy="138.9120602607727" r="1" fill="black" transform="rotate(33.03684071753589, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(32.079251077386154, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(31.121661437236426, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(30.164071797086695, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(29.20648215693696, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(28.24889251678723, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(27.2913028766375, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(26.333713236487768, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(25.376123596338036, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(24.418533956188305, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(23.460944316038574, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(22.50335467588884, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(21.54576503573911, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(20.588175395589378, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(19.630585755439647, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(18.672996115289916, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(17.715406475140185, 150, 150)"></circle><circle cx="150" cy="0" r="1" fill="black" transform="rotate(16.75781683499045, 150, 150)"></circle><circle cx="150" cy="140.55247962474823" r="1" fill="black" transform="rotate(15.800227194840721, 150, 150)"></circle><circle cx="150" cy="140.56965470314026" r="1" fill="black" transform="rotate(14.842637554690988, 150, 150)"></circle><circle cx="150" cy="140.55407524108887" r="1" fill="black" transform="rotate(13.885047914541257, 150, 150)"></circle><circle cx="150" cy="140.6714016199112" r="1" fill="black" transform="rotate(12.927458274391526, 150, 150)"></circle><circle cx="150" cy="140.5891090631485" r="1" fill="black" transform="rotate(11.969868634241793, 150, 150)"></circle><circle cx="150" cy="140.78044474124908" r="1" fill="black" transform="rotate(11.012278994092062, 150, 150)"></circle><circle cx="150" cy="140.6693547964096" r="1" fill="black" transform="rotate(10.054689353942331, 150, 150)"></circle><circle cx="150" cy="140.6985104084015" r="1" fill="black" transform="rotate(9.097099713792598, 150, 150)"></circle><circle cx="150" cy="140.82148730754852" r="1" fill="black" transform="rotate(8.139510073642867, 150, 150)"></circle><circle cx="150" cy="140.84103405475616" r="1" fill="black" transform="rotate(7.1819204334931355, 150, 150)"></circle><circle cx="150" cy="140.8070021867752" r="1" fill="black" transform="rotate(6.2243307933434044, 150, 150)"></circle><circle cx="150" cy="140.85410058498383" r="1" fill="black" transform="rotate(5.2667411531936725, 150, 150)"></circle><circle cx="150" cy="140.82760453224182" r="1" fill="black" transform="rotate(4.309151513043941, 150, 150)"></circle><circle cx="150" cy="140.95101237297058" r="1" fill="black" transform="rotate(3.3515618728942096, 150, 150)"></circle><circle cx="150" cy="140.86769819259644" r="1" fill="black" transform="rotate(2.3939722327444777, 150, 150)"></circle><circle cx="150" cy="140.91489374637604" r="1" fill="black" transform="rotate(1.4363825925947462, 150, 150)"></circle><circle cx="150" cy="140.9097146987915" r="1" fill="black" transform="rotate(0.47879295244501463, 150, 150)"></circle><circle cx="150" cy="140.90741455554962" r="1" fill="black" transform="rotate(-0.47879668770471695, 150, 150)"></circle><circle cx="150" cy="140.96299946308136" r="1" fill="black" transform="rotate(-1.4363863278544486, 150, 150)"></circle><circle cx="150" cy="140.96438348293304" r="1" fill="black" transform="rotate(-2.39397596800418, 150, 150)"></circle><circle cx="150" cy="140.81392526626587" r="1" fill="black" transform="rotate(-3.3515656081539116, 150, 150)"></circle><circle cx="150" cy="140.8734542131424" r="1" fill="black" transform="rotate(-4.309155248303643, 150, 150)"></circle><circle cx="150" cy="140.91004133224487" r="1" fill="black" transform="rotate(-5.266744888453375, 150, 150)"></circle><circle cx="150" cy="140.97341656684875" r="1" fill="black" transform="rotate(-6.224334528603107, 150, 150)"></circle><circle cx="150" cy="140.93398809432983" r="1" fill="black" transform="rotate(-7.181924168752838, 150, 150)"></circle><circle cx="150" cy="140.77011585235596" r="1" fill="black" transform="rotate(-8.139513808902569, 150, 150)"></circle><circle cx="150" cy="140.7629817724228" r="1" fill="black" transform="rotate(-9.097103449052302, 150, 150)"></circle><circle cx="150" cy="140.75054049491882" r="1" fill="black" transform="rotate(-10.054693089202033, 150, 150)"></circle><circle cx="150" cy="140.77775180339813" r="1" fill="black" transform="rotate(-11.012282729351764, 150, 150)"></circle><circle cx="150" cy="140.80973327159882" r="1" fill="black" transform="rotate(-11.969872369501497, 150, 150)"></circle><circle cx="150" cy="140.7007622718811" r="1" fill="black" transform="rotate(-12.927462009651228, 150, 150)"></circle><circle cx="150" cy="140.67949175834656" r="1" fill="black" transform="rotate(-13.885051649800959, 150, 150)"></circle><circle cx="150" cy="140.73952436447144" r="1" fill="black" transform="rotate(-14.842641289950691, 150, 150)"></circle><circle cx="150" cy="140.60719311237335" r="1" fill="black" transform="rotate(-15.800230930100422, 150, 150)"></circle><circle cx="150" cy="140.5496907234192" r="1" fill="black" transform="rotate(-16.757820570250153, 150, 150)"></circle><circle cx="150" cy="140.53920209407806" r="1" fill="black" transform="rotate(-17.715410210399885, 150, 150)"></circle><circle cx="150" cy="140.46871781349182" r="1" fill="black" transform="rotate(-18.672999850549616, 150, 150)"></circle><circle cx="150" cy="140.4303640127182" r="1" fill="black" transform="rotate(-19.63058949069935, 150, 150)"></circle><circle cx="150" cy="140.38454174995422" r="1" fill="black" transform="rotate(-20.58817913084908, 150, 150)"></circle><circle cx="150" cy="140.39272725582123" r="1" fill="black" transform="rotate(-21.545768770998812, 150, 150)"></circle><circle cx="150" cy="140.30712842941284" r="1" fill="black" transform="rotate(-22.503358411148543, 150, 150)"></circle><circle cx="150" cy="140.2510118484497" r="1" fill="black" transform="rotate(-23.460948051298274, 150, 150)"></circle><circle cx="150" cy="140.19781291484833" r="1" fill="black" transform="rotate(-24.418537691448005, 150, 150)"></circle><circle cx="150" cy="140.16983687877655" r="1" fill="black" transform="rotate(-25.37612733159774, 150, 150)"></circle><circle cx="150" cy="140.017569065094" r="1" fill="black" transform="rotate(-26.33371697174747, 150, 150)"></circle><circle cx="150" cy="139.91782903671265" r="1" fill="black" transform="rotate(-27.291306611897202, 150, 150)"></circle><circle cx="150" cy="139.87675309181213" r="1" fill="black" transform="rotate(-28.248896252046933, 150, 150)"></circle><circle cx="150" cy="139.74642992019653" r="1" fill="black" transform="rotate(-29.206485892196664, 150, 150)"></circle><circle cx="150" cy="139.62424755096436" r="1" fill="black" transform="rotate(-30.164075532346395, 150, 150)"></circle><circle cx="150" cy="139.58834767341614" r="1" fill="black" transform="rotate(-31.12166517249613, 150, 150)"></circle><circle cx="150" cy="139.4839072227478" r="1" fill="black" transform="rotate(-32.07925481264586, 150, 150)"></circle><circle cx="150" cy="139.38374161720276" r="1" fill="black" transform="rotate(-33.03684445279559, 150, 150)"></circle><circle cx="150" cy="139.239981174469" r="1" fill="black" transform="rotate(-33.994434092945326, 150, 150)"></circle><circle cx="150" cy="139.11542654037476" r="1" fill="black" transform="rotate(-34.952023733095054, 150, 150)"></circle><circle cx="150" cy="138.9248812198639" r="1" fill="black" transform="rotate(-35.90961337324479, 150, 150)"></circle><circle cx="150" cy="138.87885808944702" r="1" fill="black" transform="rotate(-36.867203013394516, 150, 150)"></circle><circle cx="150" cy="138.78018021583557" r="1" fill="black" transform="rotate(-37.82479265354425, 150, 150)"></circle><circle cx="150" cy="138.70577812194824" r="1" fill="black" transform="rotate(-38.78238229369398, 150, 150)"></circle><circle cx="150" cy="138.4095048904419" r="1" fill="black" transform="rotate(-39.73997193384371, 150, 150)"></circle><circle cx="150" cy="138.4117078781128" r="1" fill="black" transform="rotate(-40.69756157399345, 150, 150)"></circle><circle cx="150" cy="138.11986327171326" r="1" fill="black" transform="rotate(-41.655151214143174, 150, 150)"></circle><circle cx="150" cy="138.03699731826782" r="1" fill="black" transform="rotate(-42.61274085429291, 150, 150)"></circle><circle cx="150" cy="137.77318596839905" r="1" fill="black" transform="rotate(-43.570330494442636, 150, 150)"></circle><circle cx="150" cy="137.59308218955994" r="1" fill="black" transform="rotate(-44.52792013459237, 150, 150)"></circle><circle cx="150" cy="148.68787214159966" r="1" fill="black" transform="rotate(-45.4855097747421, 150, 150)"></circle><circle cx="150" cy="148.6534158885479" r="1" fill="black" transform="rotate(-46.44309941489183, 150, 150)"></circle><circle cx="150" cy="148.66560578346252" r="1" fill="black" transform="rotate(-47.40068905504157, 150, 150)"></circle><circle cx="150" cy="148.69087651371956" r="1" fill="black" transform="rotate(-48.358278695191295, 150, 150)"></circle><circle cx="150" cy="148.67701917886734" r="1" fill="black" transform="rotate(-49.31586833534103, 150, 150)"></circle><circle cx="150" cy="148.73200923204422" r="1" fill="black" transform="rotate(-50.27345797549076, 150, 150)"></circle><circle cx="150" cy="148.78763258457184" r="1" fill="black" transform="rotate(-51.23104761564049, 150, 150)"></circle><circle cx="150" cy="148.83011117577553" r="1" fill="black" transform="rotate(-52.188637255790226, 150, 150)"></circle><circle cx="150" cy="148.79089161753654" r="1" fill="black" transform="rotate(-53.146226895939954, 150, 150)"></circle><circle cx="150" cy="148.75727035105228" r="1" fill="black" transform="rotate(-54.10381653608969, 150, 150)"></circle><circle cx="150" cy="148.91492910683155" r="1" fill="black" transform="rotate(-55.061406176239416, 150, 150)"></circle><circle cx="150" cy="148.97352054715157" r="1" fill="black" transform="rotate(-56.01899581638915, 150, 150)"></circle><circle cx="150" cy="148.87661032378674" r="1" fill="black" transform="rotate(-56.97658545653888, 150, 150)"></circle><circle cx="150" cy="148.85739110410213" r="1" fill="black" transform="rotate(-57.93417509668861, 150, 150)"></circle><circle cx="150" cy="149.00959432125092" r="1" fill="black" transform="rotate(-58.89176473683835, 150, 150)"></circle><circle cx="150" cy="148.96037720143795" r="1" fill="black" transform="rotate(-59.849354376988074, 150, 150)"></circle><circle cx="150" cy="148.92660774290562" r="1" fill="black" transform="rotate(-60.80694401713781, 150, 150)"></circle><circle cx="150" cy="148.8718669116497" r="1" fill="black" transform="rotate(-61.76453365728754, 150, 150)"></circle><circle cx="150" cy="148.9872857928276" r="1" fill="black" transform="rotate(-62.72212329743727, 150, 150)"></circle><circle cx="150" cy="148.95398132503033" r="1" fill="black" transform="rotate(-63.679712937587, 150, 150)"></circle><circle cx="150" cy="149.008649289608" r="1" fill="black" transform="rotate(-64.63730257773673, 150, 150)"></circle><circle cx="150" cy="149.04969051480293" r="1" fill="black" transform="rotate(-65.59489221788647, 150, 150)"></circle><circle cx="150" cy="149.03427459299564" r="1" fill="black" transform="rotate(-66.5524818580362, 150, 150)"></circle><circle cx="150" cy="148.99027295410633" r="1" fill="black" transform="rotate(-67.51007149818592, 150, 150)"></circle><circle cx="150" cy="148.98195505142212" r="1" fill="black" transform="rotate(-68.46766113833566, 150, 150)"></circle><circle cx="150" cy="148.9429809898138" r="1" fill="black" transform="rotate(-69.42525077848539, 150, 150)"></circle><circle cx="150" cy="149.13249775767326" r="1" fill="black" transform="rotate(-70.38284041863513, 150, 150)"></circle><circle cx="150" cy="149.05946113169193" r="1" fill="black" transform="rotate(-71.34043005878486, 150, 150)"></circle><circle cx="150" cy="148.97644758224487" r="1" fill="black" transform="rotate(-72.29801969893458, 150, 150)"></circle><circle cx="150" cy="149.0214917063713" r="1" fill="black" transform="rotate(-73.25560933908432, 150, 150)"></circle><circle cx="150" cy="149.11260806024075" r="1" fill="black" transform="rotate(-74.21319897923405, 150, 150)"></circle><circle cx="150" cy="148.99658098816872" r="1" fill="black" transform="rotate(-75.17078861938379, 150, 150)"></circle><circle cx="150" cy="149.0024458616972" r="1" fill="black" transform="rotate(-76.12837825953352, 150, 150)"></circle><circle cx="150" cy="149.04565922915936" r="1" fill="black" transform="rotate(-77.08596789968324, 150, 150)"></circle><circle cx="150" cy="149.12032552063465" r="1" fill="black" transform="rotate(-78.04355753983297, 150, 150)"></circle><circle cx="150" cy="149.04345124959946" r="1" fill="black" transform="rotate(-79.00114717998271, 150, 150)"></circle><circle cx="150" cy="149.1201589256525" r="1" fill="black" transform="rotate(-79.95873682013244, 150, 150)"></circle><circle cx="150" cy="149.10673536360264" r="1" fill="black" transform="rotate(-80.91632646028216, 150, 150)"></circle><circle cx="150" cy="148.95889841020107" r="1" fill="black" transform="rotate(-81.8739161004319, 150, 150)"></circle><circle cx="150" cy="149.1008125245571" r="1" fill="black" transform="rotate(-82.83150574058163, 150, 150)"></circle><circle cx="150" cy="149.0312408655882" r="1" fill="black" transform="rotate(-83.78909538073137, 150, 150)"></circle><circle cx="150" cy="149.1867781430483" r="1" fill="black" transform="rotate(-84.7466850208811, 150, 150)"></circle><circle cx="150" cy="149.12262380123138" r="1" fill="black" transform="rotate(-85.70427466103082, 150, 150)"></circle><circle cx="150" cy="149.10160467028618" r="1" fill="black" transform="rotate(-86.66186430118056, 150, 150)"></circle><circle cx="150" cy="149.11902084946632" r="1" fill="black" transform="rotate(-87.61945394133029, 150, 150)"></circle><circle cx="150" cy="149.14134562015533" r="1" fill="black" transform="rotate(-88.57704358148003, 150, 150)"></circle><circle cx="150" cy="149.1407123953104" r="1" fill="black" transform="rotate(-89.53463322162976, 150, 150)"></circle><circle cx="150" cy="149.13906536996365" r="1" fill="black" transform="rotate(-90.49222286177948, 150, 150)"></circle><circle cx="150" cy="149.07552182674408" r="1" fill="black" transform="rotate(-91.44981250192922, 150, 150)"></circle><circle cx="150" cy="149.01519045233727" r="1" fill="black" transform="rotate(-92.40740214207895, 150, 150)"></circle><circle cx="150" cy="149.08216454088688" r="1" fill="black" transform="rotate(-93.36499178222869, 150, 150)"></circle><circle cx="150" cy="149.14867147803307" r="1" fill="black" transform="rotate(-94.32258142237842, 150, 150)"></circle><circle cx="150" cy="149.1145934164524" r="1" fill="black" transform="rotate(-95.28017106252814, 150, 150)"></circle><circle cx="150" cy="149.17618684470654" r="1" fill="black" transform="rotate(-96.23776070267787, 150, 150)"></circle><circle cx="150" cy="149.13814015686512" r="1" fill="black" transform="rotate(-97.19535034282761, 150, 150)"></circle><circle cx="150" cy="149.1226950287819" r="1" fill="black" transform="rotate(-98.15293998297734, 150, 150)"></circle><circle cx="150" cy="149.01660211384296" r="1" fill="black" transform="rotate(-99.11052962312706, 150, 150)"></circle><circle cx="150" cy="149.02629643678665" r="1" fill="black" transform="rotate(-100.0681192632768, 150, 150)"></circle><circle cx="150" cy="149.03564639389515" r="1" fill="black" transform="rotate(-101.02570890342653, 150, 150)"></circle><circle cx="150" cy="148.9906793087721" r="1" fill="black" transform="rotate(-101.98329854357627, 150, 150)"></circle><circle cx="150" cy="149.12111334502697" r="1" fill="black" transform="rotate(-102.940888183726, 150, 150)"></circle><circle cx="150" cy="149.12864834070206" r="1" fill="black" transform="rotate(-103.89847782387572, 150, 150)"></circle><circle cx="150" cy="149.03268195688725" r="1" fill="black" transform="rotate(-104.85606746402546, 150, 150)"></circle><circle cx="150" cy="149.02328461408615" r="1" fill="black" transform="rotate(-105.81365710417519, 150, 150)"></circle><circle cx="150" cy="149.04288977384567" r="1" fill="black" transform="rotate(-106.77124674432493, 150, 150)"></circle><circle cx="150" cy="149.09507930278778" r="1" fill="black" transform="rotate(-107.72883638447466, 150, 150)"></circle><circle cx="150" cy="149.04222019016743" r="1" fill="black" transform="rotate(-108.68642602462438, 150, 150)"></circle><circle cx="150" cy="149.03988033533096" r="1" fill="black" transform="rotate(-109.64401566477412, 150, 150)"></circle><circle cx="150" cy="148.99532318115234" r="1" fill="black" transform="rotate(-110.60160530492385, 150, 150)"></circle><circle cx="150" cy="148.99928405880928" r="1" fill="black" transform="rotate(-111.55919494507359, 150, 150)"></circle><circle cx="150" cy="149.042831286788" r="1" fill="black" transform="rotate(-112.51678458522332, 150, 150)"></circle><circle cx="150" cy="148.9918828755617" r="1" fill="black" transform="rotate(-113.47437422537304, 150, 150)"></circle><circle cx="150" cy="149.1055442392826" r="1" fill="black" transform="rotate(-114.43196386552277, 150, 150)"></circle><circle cx="150" cy="149.0107012540102" r="1" fill="black" transform="rotate(-115.38955350567251, 150, 150)"></circle><circle cx="150" cy="149.06137600541115" r="1" fill="black" transform="rotate(-116.34714314582224, 150, 150)"></circle><circle cx="150" cy="148.99250745773315" r="1" fill="black" transform="rotate(-117.30473278597196, 150, 150)"></circle><circle cx="150" cy="148.96082535386086" r="1" fill="black" transform="rotate(-118.2623224261217, 150, 150)"></circle><circle cx="150" cy="149.03303265571594" r="1" fill="black" transform="rotate(-119.21991206627143, 150, 150)"></circle><circle cx="150" cy="148.98854047060013" r="1" fill="black" transform="rotate(-120.17750170642117, 150, 150)"></circle><circle cx="150" cy="149.0432122349739" r="1" fill="black" transform="rotate(-121.1350913465709, 150, 150)"></circle><circle cx="150" cy="149.0068554878235" r="1" fill="black" transform="rotate(-122.09268098672062, 150, 150)"></circle><circle cx="150" cy="148.92589017748833" r="1" fill="black" transform="rotate(-123.05027062687036, 150, 150)"></circle><circle cx="150" cy="148.9575146883726" r="1" fill="black" transform="rotate(-124.00786026702009, 150, 150)"></circle><circle cx="150" cy="148.90069030225277" r="1" fill="black" transform="rotate(-124.96544990716983, 150, 150)"></circle><circle cx="150" cy="148.88133570551872" r="1" fill="black" transform="rotate(-125.92303954731956, 150, 150)"></circle><circle cx="150" cy="148.89317490160465" r="1" fill="black" transform="rotate(-126.88062918746928, 150, 150)"></circle><circle cx="150" cy="148.92512649297714" r="1" fill="black" transform="rotate(-127.83821882761902, 150, 150)"></circle><circle cx="150" cy="148.81754487752914" r="1" fill="black" transform="rotate(-128.79580846776875, 150, 150)"></circle><circle cx="150" cy="148.84821720421314" r="1" fill="black" transform="rotate(-129.75339810791849, 150, 150)"></circle><circle cx="150" cy="148.85460436344147" r="1" fill="black" transform="rotate(-130.71098774806822, 150, 150)"></circle><circle cx="150" cy="148.8287054002285" r="1" fill="black" transform="rotate(-131.66857738821795, 150, 150)"></circle><circle cx="150" cy="148.70382457971573" r="1" fill="black" transform="rotate(-132.6261670283677, 150, 150)"></circle><circle cx="150" cy="148.78549374639988" r="1" fill="black" transform="rotate(-133.5837566685174, 150, 150)"></circle><circle cx="150" cy="148.80711928009987" r="1" fill="black" transform="rotate(-134.54134630866713, 150, 150)"></circle><circle cx="150" cy="148.67671266198158" r="1" fill="black" transform="rotate(-135.49893594881686, 150, 150)"></circle><circle cx="150" cy="148.77659782767296" r="1" fill="black" transform="rotate(-136.4565255889666, 150, 150)"></circle><circle cx="150" cy="148.70483174920082" r="1" fill="black" transform="rotate(-137.41411522911633, 150, 150)"></circle><circle cx="150" cy="148.6351376771927" r="1" fill="black" transform="rotate(-138.37170486926607, 150, 150)"></circle><circle cx="150" cy="148.67723658680916" r="1" fill="black" transform="rotate(-139.3292945094158, 150, 150)"></circle><circle cx="150" cy="148.57319504022598" r="1" fill="black" transform="rotate(-140.28688414956554, 150, 150)"></circle><circle cx="150" cy="148.60693335533142" r="1" fill="black" transform="rotate(-141.24447378971527, 150, 150)"></circle><circle cx="150" cy="148.59326973557472" r="1" fill="black" transform="rotate(-142.202063429865, 150, 150)"></circle><circle cx="150" cy="148.62724527716637" r="1" fill="black" transform="rotate(-143.1596530700147, 150, 150)"></circle><circle cx="150" cy="148.50412845611572" r="1" fill="black" transform="rotate(-144.11724271016445, 150, 150)"></circle><circle cx="150" cy="148.45691069960594" r="1" fill="black" transform="rotate(-145.07483235031418, 150, 150)"></circle><circle cx="150" cy="148.5426789522171" r="1" fill="black" transform="rotate(-146.03242199046392, 150, 150)"></circle><circle cx="150" cy="148.42439383268356" r="1" fill="black" transform="rotate(-146.99001163061365, 150, 150)"></circle><circle cx="150" cy="148.4326273202896" r="1" fill="black" transform="rotate(-147.94760127076339, 150, 150)"></circle><circle cx="150" cy="148.2127059996128" r="1" fill="black" transform="rotate(-148.90519091091312, 150, 150)"></circle><circle cx="150" cy="148.25716644525528" r="1" fill="black" transform="rotate(-149.86278055106285, 150, 150)"></circle><circle cx="150" cy="148.3573153614998" r="1" fill="black" transform="rotate(-150.8203701912126, 150, 150)"></circle><circle cx="150" cy="148.20022895932198" r="1" fill="black" transform="rotate(-151.7779598313623, 150, 150)"></circle><circle cx="150" cy="148.20570781826973" r="1" fill="black" transform="rotate(-152.73554947151203, 150, 150)"></circle><circle cx="150" cy="148.0916704237461" r="1" fill="black" transform="rotate(-153.69313911166176, 150, 150)"></circle><circle cx="150" cy="148.05063411593437" r="1" fill="black" transform="rotate(-154.6507287518115, 150, 150)"></circle><circle cx="150" cy="147.89886996150017" r="1" fill="black" transform="rotate(-155.60831839196123, 150, 150)"></circle><circle cx="150" cy="147.79720306396484" r="1" fill="black" transform="rotate(-156.56590803211097, 150, 150)"></circle><circle cx="150" cy="147.85285636782646" r="1" fill="black" transform="rotate(-157.5234976722607, 150, 150)"></circle><circle cx="150" cy="147.73774608969688" r="1" fill="black" transform="rotate(-158.48108731241044, 150, 150)"></circle><circle cx="150" cy="147.49797105789185" r="1" fill="black" transform="rotate(-159.43867695256017, 150, 150)"></circle><circle cx="150" cy="143.88694882392883" r="1" fill="black" transform="rotate(-160.3962665927099, 150, 150)"></circle><circle cx="150" cy="143.94204318523407" r="1" fill="black" transform="rotate(-161.3538562328596, 150, 150)"></circle><circle cx="150" cy="143.9450478553772" r="1" fill="black" transform="rotate(-162.31144587300935, 150, 150)"></circle><circle cx="150" cy="143.98705899715424" r="1" fill="black" transform="rotate(-163.26903551315908, 150, 150)"></circle><circle cx="150" cy="144.02555286884308" r="1" fill="black" transform="rotate(-164.22662515330882, 150, 150)"></circle><circle cx="150" cy="144.01578962802887" r="1" fill="black" transform="rotate(-165.18421479345855, 150, 150)"></circle><circle cx="150" cy="144.09508228302002" r="1" fill="black" transform="rotate(-166.14180443360829, 150, 150)"></circle><circle cx="150" cy="144.14368987083435" r="1" fill="black" transform="rotate(-167.09939407375802, 150, 150)"></circle><circle cx="150" cy="144.14909839630127" r="1" fill="black" transform="rotate(-168.05698371390775, 150, 150)"></circle><circle cx="150" cy="144.12271976470947" r="1" fill="black" transform="rotate(-169.0145733540575, 150, 150)"></circle><circle cx="150" cy="144.0920752286911" r="1" fill="black" transform="rotate(-169.9721629942072, 150, 150)"></circle><circle cx="150" cy="144.12735044956207" r="1" fill="black" transform="rotate(-170.92975263435693, 150, 150)"></circle><circle cx="150" cy="144.2484474182129" r="1" fill="black" transform="rotate(-171.88734227450666, 150, 150)"></circle></svg>
+  </div>
+</div>
+  </div>
+</div>
+
+<div class="jsWidgetContainer cssWidgetContainer" data-widget-instance-id="9" data-widget-conf="1" style="left: 326px; top: 560px; width: 140px; height: 80px; z-index: 20;">
+  <!--
+  <link rel="stylesheet" type="text/css" href="widgets//main.css" />
+  <script type="text/javascript" src="widgets//main.js"></script>
+  -->
+
+  <div class="jsWidgetConfiguration cssWidgetConfiguration" data-widget-instance-id="9">
+    <a href="#" class="jsWidgetSettings cssWidgetSettings" data-widget-instance-id="9"></a>
+    <!--
+    <a href="#" class="jsWidgetDelete cssWidgetDelete shadow"></a>
+    <a href="#" class="jsWidgetConfirm cssWidgetConfirm shadow"></a>
+    -->
+    <span href="#" class="jsWidgetResize cssWidgetResize"></span>
+  </div>
+
+  <div class="jsWidgetContent cssWidgetContent">
+    <div class="jsWidgetMask cssWidgetMask"></div>
+    <div class="ros-widget" data-widget-name="param-viewer" data-min-height="80" data-min-width="140" data-max-height="1000" data-max-width="1000" data-height="80" data-width="140">
+
+  <!--  META Tags to describe topics subscription -->
+  <meta data-ros-param="1" data-ros-param-id="1" data-ros-param-desc="Param selector 1" data-ros-param-chng="param1Changed" data-ros-param-sltcd="" data-ros-param-slctd="/use_sim_time">
+
+  <!-- The content which could be manipulated by widget class -->
+  <div class="header">
+    <p class="name">/use_sim_time</p>
+  </div>
+  <div class="datatopic1">
+    <input type="text" name="doesnotmatter" value="-- param value --">
+    <button type="button" class="jsWidgetParamViewerRefresh">Get</button>
+    <button type="button" class="jsWidgetParamViewerSave">Set</button>
+  </div>
+</div>
+  </div>
+</div>
+
+<div class="jsWidgetContainer cssWidgetContainer jsSettingsActive" data-widget-instance-id="13" data-widget-conf="1" style="left: 700px; top: 358px; width: 296px; height: 264px; z-index: 20;">
+  <!--
+  <link rel="stylesheet" type="text/css" href="widgets//main.css" />
+  <script type="text/javascript" src="widgets//main.js"></script>
+  -->
+
+  <div class="jsWidgetConfiguration cssWidgetConfiguration" data-widget-instance-id="13">
+    <a href="#" class="jsWidgetSettings cssWidgetSettings" data-widget-instance-id="13"></a>
+    <!--
+    <a href="#" class="jsWidgetDelete cssWidgetDelete shadow"></a>
+    <a href="#" class="jsWidgetConfirm cssWidgetConfirm shadow"></a>
+    -->
+    <span href="#" class="jsWidgetResize cssWidgetResize"></span>
+  </div>
+
+  <div class="jsWidgetContent cssWidgetContent">
+    <div class="jsWidgetMask cssWidgetMask"></div>
+    <div class="ros-widget" data-widget-name="topic-publisher" data-min-height="34" data-min-width="66" data-max-height="1200" data-max-width="1600" data-height="300" data-width="400">
+
+	<!--  META Tags to describe topics subscription -->
+	<meta data-wdgt-param="1" data-widget-param-id="1" data-widget-param-desc="Topic name" data-widget-param-var="topicName" data-widget-param-value="/cmd_vel">
+	<meta data-wdgt-param="1" data-widget-param-id="2" data-widget-param-desc="Topic type" data-widget-param-var="topicType" data-widget-param-value="geometry_msgs/Twist">
+
+	<!-- The content which could be manipulated by widget class -->
+	<div class="header">
+		<p class="name">/cmd_vel</p>
+		<p class="type">geometry_msgs/Twist</p>
+	</div>
+	<div class="form">
+    <form><p style="padding-left:0px">Object<span style="color:#777;">&nbsp;(geometry_msgs/Twist)</span></p><p style="padding-left:20px">linear<span style="color:#777;">&nbsp;(geometry_msgs/Vector3)</span></p><p style="padding-left:40px">x<span style="color:#777;">&nbsp;(float64)</span><input type="number" name="formObject.linear.x" value=""></p><p style="padding-left:40px">y<span style="color:#777;">&nbsp;(float64)</span><input type="number" name="formObject.linear.y" value=""></p><p style="padding-left:40px">z<span style="color:#777;">&nbsp;(float64)</span><input type="number" name="formObject.linear.z" value=""></p><p style="padding-left:20px">angular<span style="color:#777;">&nbsp;(geometry_msgs/Vector3)</span></p><p style="padding-left:40px">x<span style="color:#777;">&nbsp;(float64)</span><input type="number" name="formObject.angular.x" value=""></p><p style="padding-left:40px">y<span style="color:#777;">&nbsp;(float64)</span><input type="number" name="formObject.angular.y" value=""></p><p style="padding-left:40px">z<span style="color:#777;">&nbsp;(float64)</span><input type="number" name="formObject.angular.z" value=""></p></form>
+    <button type="button" class="jsWidgetTopicPublisherOnce" disabled="disabled">Publish once</button>
+    <button type="button" class="jsWidgetTopicPublisherPublish" disabled="disabled">Publish</button>
+    <button type="button" class="jsWidgetTopicPublisherStop">Stop</button>
+  </div>
+</div>
+  </div>
+</div>
+
+<div class="jsWidgetContainer cssWidgetContainer" data-widget-instance-id="15" data-widget-conf="1" style="left: 417px; top: 347px; width: 256px; height: 210px; z-index: 20;">
+  <!--
+  <link rel="stylesheet" type="text/css" href="widgets//main.css" />
+  <script type="text/javascript" src="widgets//main.js"></script>
+  -->
+
+  <div class="jsWidgetConfiguration cssWidgetConfiguration" data-widget-instance-id="15">
+    <a href="#" class="jsWidgetSettings cssWidgetSettings" data-widget-instance-id="15"></a>
+    <!--
+    <a href="#" class="jsWidgetDelete cssWidgetDelete shadow"></a>
+    <a href="#" class="jsWidgetConfirm cssWidgetConfirm shadow"></a>
+    -->
+    <span href="#" class="jsWidgetResize cssWidgetResize"></span>
+  </div>
+
+  <div class="jsWidgetContent cssWidgetContent">
+    <div class="jsWidgetMask cssWidgetMask"></div>
+    <div class="ros-widget" data-widget-name="topic-subscriber" data-min-height="34" data-min-width="66" data-max-height="1200" data-max-width="1600" data-height="300" data-width="400">
+
+	<!--  META Tags to describe topics subscription -->
+	<meta data-ros-topic="1" data-ros-topic-id="1" data-ros-topic-desc="Topic to subscribe" data-ros-topic-type="" data-ros-topic-chng="onchange1" data-ros-topic-slctd="/cmd_vel">
+	<meta data-wdgt-param="1" data-widget-param-id="1" data-widget-param-desc="Array show limit" data-widget-param-var="arrayShowLimit" data-widget-param-value="10">
+	<meta data-wdgt-param="1" data-widget-param-id="2" data-widget-param-desc="Value show limit" data-widget-param-var="valueShowLimit" data-widget-param-value="50">
+	<meta data-wdgt-param="1" data-widget-param-id="3" data-widget-param-desc="Max update rate" data-widget-param-var="maxUpdateRate" data-widget-param-value="1">
+
+	<!-- The content which could be manipulated by widget class -->
+	<div class="header">
+		<p class="name">/cmd_vel</p>
+		<p class="type">geometry_msgs/Twist</p>
+	</div>
+	<div class="datatopic1"><p style="padding-left: 0px;">linear { }</p><p style="padding-left: 10px;">y: 0</p><p style="padding-left: 10px;">x: -0.1</p><p style="padding-left: 10px;">z: 0</p><p style="padding-left: 0px;">angular { }</p><p style="padding-left: 10px;">y: 0</p><p style="padding-left: 10px;">x: 0</p><p style="padding-left: 10px;">z: 0</p></div>
+</div>
+  </div>
+</div>
+
+
+
+</div></div>
+		</div>
+
+		<div id="footer">
+
+		</div><div id="lightboxBackground" class="cssLightboxBackground">
+  <div id="lightbox" class="cssLightbox"></div>
+</div>
+	</div>
+
+
+	<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-33098700-5', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+  <!-- JavaScript -->
+  <script async="" src="js/analytics.js"></script>
+  <script type="text/javascript" src="js/handlebars.min.js"></script>
+  <script type="text/javascript" src="js/jquery-2.2.4.min.js" ></script>
+  <script type="text/javascript" src="js/templates.js"></script>
+  <script type="text/javascript" src="js/eventemitter2.min.js"></script>
+  <script type="text/javascript" src="js/roslib.min.js"></script>
+  <script type="text/javascript" src="js/mjpegcanvas.min.js"></script>
+  <script type="text/javascript" src="js/three.min.js"></script>
+  <script type="text/javascript" src="js/ros3d.min.js"></script>
+  <script type="text/javascript" src="js/bundle.js"></script>
+  <script type="text/javascript" src="js/widgets.bundle.js"></script>
+  <script type="text/javascript" src="js/d3.v4.min.js"></script>
+
+<script type="text/javascript" src="widgets/topic_subscriber/main.js"></script><script type="text/javascript" src="widgets/topic_publisher/main.js"></script><script type="text/javascript" src="widgets/param_viewer/main.js"></script><script type="text/javascript" src="widgets/service_viewer/main.js"></script><script type="text/javascript" src="widgets/action_lib_tool/main.js"></script><script type="text/javascript" src="widgets/gmaps_gps/main.js"></script><script type="text/javascript" src="widgets/camera_viewer/main.js"></script><script type="text/javascript" src="widgets/laser_scan_viewer/main.js"></script><script type="text/javascript" src="widgets/imu_viewer/main.js"></script><script type="text/javascript" src="widgets/ros_3d_viewer/main.js"></script><script type="text/javascript" src="widgets/diagnostics_viewer/main.js"></script><script type="text/javascript" src="widgets/log_reader/main.js"></script><script type="text/javascript" src="widgets/new_widget/main.js"></script></body></html>
