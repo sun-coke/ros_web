@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script type="text/javascript" src="./js/eventemitter2.min.js"></script>
+<script type="text/javascript" src="./js/mjpegcanvas.min.js"></script>
+
+<script type="text/javascript" type="text/javascript">
+  /**
+   * Setup all visualization elements when the page is loaded. 
+   */
+  function init() {
+    // Create the main viewer.
+    var viewer = new MJPEGCANVAS.MultiStreamViewer({
+      divID : 'mjpeg',
+      host : 'http://localhost:8080',
+      width : 640,
+      height : 480,
+      topics : [ '/camera/rgb/image_raw', '/camera/rgb/image_raw','/camera/rgb/image_raw' ],
+      labels : [ 'Robot View', 'Left Arm View', 'Right Arm View' ]
+    });
+  }
+</script>
+
+
+	<script type="text/javascript">
+		var video =new Vue({
+			el: '#app',
+			data:{
+				videoUrl:" ",
+				fei:"kandjianma"
+			},
+			methods:{
+				closeVideo:function(event){
+					this.videoUrl=" ";
+				},
+				showVideo:function(event){	
+					this.videoUrl = "http://localhost:8080/stream?topic=/camera/rgb/image_raw&type=sensor_msgs/Image";
+					// this.videoUrl = "http://192.169:8080/stream?topic=/usb_cam/image_raw&type=ros_compressed";
+					// window.alert(this.videoUrl);
+				}
+			}
+		})
+
+	</script>
+</head>
+
+<body onload="init()">
+  <h1>Multi-Stream MJPEG Canvas Example</h1>
+  <div id="mjpeg"></div>
+</body>
+</html>

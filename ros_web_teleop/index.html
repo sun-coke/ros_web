@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+
+<title>机器人学</title>
+
+<!--icons-->
+
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery-ui.min.js"></script>
+<script src="./js/three.js"></script>
+<script src="./js/ColladaLoader.js"></script>
+<script src="./js/STLLoader.js"></script>
+<script src="http://cdn.robotwebtools.org/ColladaAnimationCompress/current/ColladaLoader2.js"></script>
+<script src="./js/eventemitter2.min.js"></script>
+<script src="./js/roslib.js"></script>
+<script src="./js/ros3d.min.js"></script>
+<script src="./js/keyboardteleop.js"></script>
+<script src="./js/mjpegcanvas.min.js"></script>
+
+<script>
+  /**
+   * Setup all GUI elements when the page is loaded. 
+   */
+  var teleop_topic = '/cmd_vel'
+  var base_frame = 'odom';
+  var init_flag = false
+function submit_values(){
+  teleop_topic = document.getElementById("tele_topic").value;
+  base_frame = document.getElementById("base_frame_name").value;
+  init_flag = true;
+  init();
+}
+  function init() {
+  
+    if(init_flag == true)
+    {
+    // Connecting to ROS.
+    var ros = new ROSLIB.Ros({
+      url : 'ws://localhost:9090'
+    });
+    // Initialize the teleop.
+    var teleop = new KEYBOARDTELEOP.Teleop({
+      ros : ros,
+      topic : teleop_topic
+    });
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+    var viewer = new ROS3D.Viewer({
+      background : 000,
+      divID : 'urdf',
+      width : 800,
+      height : 400,
+      antialias : true
+    });
+ 
+    // Add a grid.
+    viewer.addObject(new ROS3D.Grid());
+
+  // Create the Stream viewer.
+    var streamViewer = new MJPEGCANVAS.MultiStreamViewer({
+      divID : 'mjpeg',
+      host : 'localhost',
+      width : 800,
+      height : 400,
+      host : ip,
+      port : 8080,
+      interval : 200,
+      topics : [ '/camera/rgb/image_raw', '/camera/rgb/image_raw','/camera/rgb/image_raw' ],
+      labels : [ 'Robot View', 'Left Arm View', 'Right Arm View' ]
+    });
+
+    // Setup a client to listen to TFs.
+    var tfClient = new ROSLIB.TFClient({
+      ros : ros,
+      fixedFrame : base_frame,
+      angularThres : 0.01,
+      transThres : 0.01,
+      rate : 10.0
+    });
+    // Setup the URDF client.
+  
+    var urdfClient = new ROS3D.UrdfClient({
+      ros : ros,
+      tfClient : tfClient,
+      path : './urdf/turtlebot3_waffle.urdf.xacro',
+      rootObject : viewer.scene,
+      loader : ROS3D.COLLADA_LOADER
+    });
+///////////////////////////////////////////////////////////////////////////////////////////////////
+    // Create a UI slider using JQuery UI.
+    $('#speed-slider').slider({
+      range : 'min',
+      min : 0,
+      max : 100,
+      value : 90,
+      slide : function(event, ui) {
+        // Change the speed label.
+        $('#speed-label').html('Speed: ' + ui.value + '%');
+        // Scale the speed.
+        teleop.scale = (ui.value / 100.0);
+      }
+    });
+    // Set the initial speed .
+    $('#speed-label').html('Speed: ' + ($('#speed-slider').slider('value')) + '%');
+    teleop.scale = ($('#speed-slider').slider('value') / 100.0);
+    init_flag = false;
+  }
+  }
+</script>
+</head>
+
+<form >
+  Teleop topic:<br>
+  <input type="text" name="Teleop Topic" id='tele_topic' value="/cmd_vel">
+  <br>
+  Base frame:<br>
+  <input type="text" name="Base frame" id='base_frame_name' value="/odom">
+  <br>
+
+ <input type="button" onmousedown="submit_values()" value="Submit"> 
+
+</form> 
+
+  <p>Run the following commands in the terminal then refresh this page. Check the JavaScript
+    console for the output.</p>
+  <ol>
+    <li>roslaunch turtlebot3_gazebo turtlebot3_world.launch </li>
+    <li>roslaunch rosbridge_server rosbridge_websocket.launch </li>
+    <li>Use your arrow keys on your keyboard to move the robot (must have this browser window
+      focused).</li>
+  </ol>
+  <div id="speed-label"></div>
+  <div id="speed-slider"></div>
+  <div id="urdf"></div>
+  <div id="mjpeg"></div>
+</body>
+
+</html>
