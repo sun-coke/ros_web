@@ -73,5 +73,37 @@ $ rosrun web_video_server web_video_server
 #### 2.网页端输入如下网址：
 http://localhost:8080/stream?topic=/camera/rgb/image_raw
 
+# <ros_web_ui>基于Web的远程监控平台
+
+### A、安装
+
+#### 1. 安装rosbridge-suite，web_video_server
+
+```
+$ sudo apt-get install ros-kinetic-rosbridge-suite
+$ sudo apt-get install ros-kinetic-web-video-server
+```
+
+### B、运行
+
+
+1、启动服务端
+```
+$ roslaunch rosbridge_server rosbridge_websocket.launch
+$ rosrun web_video_server web_video_server
+```
+
+
+2、启动客户端
+拷贝ros_web_ui文件夹，在谷歌浏览器下运行main.html/index.html.
+
+
+3、建立连接
+检查连接菜单下的端口地址，将默认的是localhost地址修改成远端linux主机的IP地址，端口号默认9090。待连接标志变成绿色即表明连接成功。
+
+### C、远程控制
+拖拽组件模块，选择需要的话题名完成ros消息的发布和订阅。
+
+
 
 
