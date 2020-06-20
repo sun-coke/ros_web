@@ -97,7 +97,7 @@ $ rosrun web_video_server web_video_server
 2、启动客户端
 
 
-拷贝ros_web_ui文件夹，在谷歌浏览器下打开main.html/index.html. 或是运行http://labrom.eesc.usp.br/rosweb/
+拷贝ros_web_ui文件夹，在谷歌浏览器下打开index.html. 或是运行http://labrom.eesc.usp.br/rosweb/
 
 
 3、建立连接
