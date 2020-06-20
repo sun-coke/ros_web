@@ -95,10 +95,14 @@ $ rosrun web_video_server web_video_server
 
 
 2、启动客户端
+
+
 拷贝ros_web_ui文件夹，在谷歌浏览器下打开main.html/index.html. 或是运行http://labrom.eesc.usp.br/rosweb/
 
 
 3、建立连接
+
+
 检查连接菜单下的端口地址，将默认的是localhost地址修改成远端linux主机的IP地址，端口号默认9090。待连接标志变成绿色即表明连接成功。
 
 ### C、远程控制
