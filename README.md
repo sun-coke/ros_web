@@ -1,7 +1,7 @@
 # <ros_web_teleop>基于Web的键盘遥控
-A ROS Web  Keyboard control. Based with robotwebtools.As ROSWeb is a tool for ROS, it depends on a machine running the roscore process. It is a web application and it depends on websockets provided by rosbridge server. Until now, it is being developed and tested using Google Chrome browser.
+利用rosbridge server服务端完成基于Web的远程键盘遥控. 
 
-### Install RosbridgeSuite package and WebVideoServer
+### 安装RosbridgeSuite 和 WebVideoServer功能包
 
 ```
 $ sudo apt-get update
@@ -9,7 +9,7 @@ $ sudo apt-get install ros-kinetic-rosbridge-suite
 $ sudo apt-get install ros-kinetic-web-video-server
 ```
 
-### Install dependencies
+### 安装依赖
 
 ```
 $ rosdep update
@@ -20,7 +20,7 @@ or $ rosdep install --from-paths src --ignore-src -r -y
 # installs all the packages that the packages in your catkin workspace depend upon
 ```
 
-### Install latest development version of rosbrige_server 
+### 安装最新版rosbrige_server服务端功能包 
 
 ```
 $ cd catkin_ws/src/
@@ -29,7 +29,7 @@ $ git clone https://github.com/sun-coke/ros_web_teleop.git
 $ cd.. && catkin_make
 ```
 
-### Run
+### 运行
 
 ```
 $ roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch 
